@@ -17,6 +17,8 @@
 #include <MQTTClient.h>
 #include <cjson/cJSON.h>
 
+#define MQTT_CLEN_NAME "z2m-node-rpi-hat"
+
 static volatile sig_atomic_t g_quit = false;
 
 void sig_handler(int signum)
@@ -63,7 +65,7 @@ int main(int argc, char **argv)
 
 	MQTTClient client = 0;
 	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-	MQTTClient_create(&client, "127.0.0.1:1883", "switchd",
+	MQTTClient_create(&client, "127.0.0.1:1883", MQTT_CLEN_NAME,
 			MQTTCLIENT_PERSISTENCE_NONE, NULL);
 	conn_opts.keepAliveInterval = 20;
 	conn_opts.cleansession = 1;

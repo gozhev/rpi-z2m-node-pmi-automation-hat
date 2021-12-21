@@ -3,7 +3,7 @@ DIR_Config = ./lib
 
 OBJ_C = main.c
 
-TARGET = rpi-z2m-node
+TARGET = z2m-node-rpi-hat
 CC = gcc
 CFLAGS := -Wall -std=c11
 LIB := -lpaho-mqtt3c -lcjson

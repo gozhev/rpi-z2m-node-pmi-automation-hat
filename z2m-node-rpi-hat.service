@@ -1,0 +1,13 @@
+[Unit]
+Description=z2m-node-rpi-hat
+BindsTo=mosquitto.service
+After=network.target mosquitto.service
+
+[Service]
+ExecStart=/home/alarm/devel/z2m-node/pmi-automation-hat/z2m-node-rpi-hat
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
